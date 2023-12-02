@@ -18,4 +18,16 @@ Route::group("/user",function(){
 
     Route::get("/freeze/:id","user/freeze");
 
+    Route::post("/update","user/update");    
+    
+    Route::delete("/delete/:id","user/deleteById");
+
+    Route::get("/page","user/page");
+
+    Route::get("/get/:id","user/getById");
+
+    Route::post("/updatepwd","user/updatePassword");
+
+    Route::post("/credit","user/editCredit");
+
 });
