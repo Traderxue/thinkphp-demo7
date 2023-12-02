@@ -40,10 +40,10 @@ class User extends BaseController{
         $username = $request->post("username");
         $password = $request->post("password");
 
-        $user = UserModel::where("username",$username)->find();
+        $user = UserModel::where("username",$username)->where("disable",0)->find();
 
         if(!$user){
-            return $this->result->error("用户不存在");
+            return $this->result->error("用户不存在或被冻结");
         }
 
         if(password_verify($password,$user->password)){
@@ -52,5 +52,16 @@ class User extends BaseController{
 
         return $this->result->error("登录失败");
 
+    }
+
+    public function freeze($id){
+        $user = UserModel::where("id",$id)->find();
+        $res = $user->save([
+            "disable"=>1
+        ]);
+        if($res){
+            return $this->result->success("冻结用户成功",$user);
+        }
+        return $this->result->error("冻结用户失败");
     }
 }

@@ -16,4 +16,6 @@ Route::group("/user",function(){
 
     Route::post("/login","user/login");
 
+    Route::get("/freeze/:id","user/freeze");
+
 });
