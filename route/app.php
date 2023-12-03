@@ -31,3 +31,15 @@ Route::group("/user",function(){
     Route::post("/credit","user/editCredit");
 
 });
+
+Route::group("/type",function(){
+
+    Route::post("/add","type/add");
+
+    Route::delete("/delete/:id","type/delete");
+
+    Route::get("/getall","type/getAll");
+
+    Route::get("/page","type/page");
+
+});
