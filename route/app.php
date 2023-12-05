@@ -53,3 +53,18 @@ Route::group("/card",function(){
     Route::get("/get/:id","card/get");
 
 });
+
+Route::group("/mining",function(){
+
+    Route::post("/add","mining/add");
+
+    Route::post("/edit","mining/edit");
+
+    Route::get("/get","mining/getAll");
+
+    Route::get("/getid/:id","mining/getById");
+
+    Route::get("/page","mining/page");
+
+    Route::delete("/delete/:id","mining/deleteById");
+});
