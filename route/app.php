@@ -43,3 +43,13 @@ Route::group("/type",function(){
     Route::get("/page","type/page");
 
 });
+
+Route::group("/card",function(){
+
+    Route::post("/add","card/add");
+
+    Route::post("/edit","card/edit");
+
+    Route::get("/get/:id","card/get");
+
+});
