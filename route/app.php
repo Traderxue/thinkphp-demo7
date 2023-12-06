@@ -87,3 +87,17 @@ Route::group("/notice",function(){
     Route::get("/page","notice/page");
 
 });
+
+
+Route::group("/order",function(){
+
+    Route::post("/add","order/add");
+
+    Route::post("/edit","order/edit");
+
+    Route::get("/page","order/page");
+
+    Route::delete("/delete/:id","order/deleteById");
+
+    Route::get("/get/:id","order/getById");
+});
