@@ -75,3 +75,15 @@ Route::group("/upload",function(){
     Route::post("/file","upload/index");
 
 });
+
+Route::group("/notice",function(){
+
+    Route::post("/add","notice/add");
+
+    Route::delete("/delete/:id","notice/delete");
+
+    Route::get("/get","notice/getAll");
+
+    Route::get("/page","notice/page");
+
+});
