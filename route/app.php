@@ -68,3 +68,10 @@ Route::group("/mining",function(){
 
     Route::delete("/delete/:id","mining/deleteById");
 });
+
+
+Route::group("/upload",function(){
+
+    Route::post("/file","upload/index");
+
+});
